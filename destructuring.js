@@ -21,7 +21,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+var {color:color, make:make, model, year:year } = carDetails;
+console.log (color, make, year)
 
 
 
@@ -33,9 +34,15 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
+// const greeting = {
+//   firstName: 'Melody',
+//   lastName: 'Vincent',
+//   title: 'mom',
+// }
+
 function greeting( obj ) {
-  //Code Here
-  
+  const {firstName, lastName, title} = obj;
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,7 +61,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+  
+  function totalPopulation (object) {
+     const {utah, california, texas, arizona} = object;
+     stateTotal = utah + california+ texas + arizona
+     return stateTotal;
+  };
+  
+  
 
 
 ////////// PROBLEM 4 //////////
@@ -68,6 +82,15 @@ function greeting( obj ) {
 */
 
 //Code Here
+
+  function ingredients (object) {
+  var newIng = [];
+  const {carb, fat, protein} = object;
+  for (var key in object){
+    newIng.push(object[key])
+  }
+  return newIng;
+}
 
 
 
@@ -85,9 +108,27 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
+// Code Here
+function largeNumbers (obj) {
+  var numberArr = [];
+  const { one, two, tree} = obj;
+  for (var key in obj[obj]);
 
 
+}
+
+var largeNumbers = (object) => {
+  var valuesArray = [];
+  var {first, second, third} = object
+  for (var key in object){
+  valuesArray.push(object[key]);
+  var orderedValues = valuesArray.sort(function(a, b){return a - b})
+  var smallest = orderedValues[0];
+   
+     
+  }
+return smallest  
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -99,4 +140,16 @@ function greeting( obj ) {
 
 //Code Here
 
+function numberGroups (obj) {
+  var numbers = [];
+  const {a, b, c} = obj
+  if (a.length > b.length && a.length > c.length){
+   return a;
+  } else if (b.length > a.length && b.length > c.length)  {
+    return b;
+  }else if (c.length > b.length && c.length > a.length){
+    return c;
+  }
+return numbers;
+}
 
